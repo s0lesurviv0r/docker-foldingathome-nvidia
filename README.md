@@ -2,39 +2,28 @@
 
 Docker image for Folding@home on linux
 
-Github : [![https://github.com/InfraBuilder/docker-foldingathome](https://img.shields.io/badge/Github-infraBuilder%2Fdocker--foldingathome-lightgrey)](https://github.com/InfraBuilder/docker-foldingathome)
+Github : [![https://github.com/s0lesurviv0r/docker-foldingathome-nvidia](https://img.shields.io/badge/Github-s0lesurviv0r%2Fdocker--foldingathome--nvidia-lightgrey)](https://github.com/s0lesurviv0r/docker-foldingathome-nvidia)
 
-Docker : [![https://hub.docker.com/r/infrabuilder/foldingathome](https://img.shields.io/badge/Docker-infraBuilder%2Ffoldingathome-blue)](https://hub.docker.com/r/infrabuilder/foldingathome)
+Docker : [![https://hub.docker.com/r/s0lesurviv0r/foldingathome-nvidia](https://img.shields.io/badge/Docker-solesurviv0r%2Ffoldingathome--nvidia-blue)](https://hub.docker.com/r/s0lesurviv0r/foldingathome-nvidia)
 
 
 ## Availables tags
 
-- [lastest (Dockerfile)](https://github.com/InfraBuilder/docker-foldingathome/blob/master/Dockerfile) - ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/infrabuilder/foldingathome/latest)![GitHub last commit (branch)](https://img.shields.io/github/last-commit/InfraBuilder/docker-foldingathome/master)
+- [lastest (Dockerfile)](https://github.com/s0lesurviv0r/docker-foldingathome-nvidia/blob/master/Dockerfile) - ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/s0lesurviv0r/foldingathome-nvidia/latest)![GitHub last commit (branch)](https://img.shields.io/github/last-commit/s0lesurviv0r/docker-foldingathome-nvidia/master)
 
 ## How to run this image
 
-Start folding with no GPU (GPU=false) but every CPU cores (CPUS=0) :
+Start folding with GPU (GPU=true) and every CPU core (CPUS=0) :
 
 ```
-docker run -d --name foldingathome \
+docker run -d --name foldingathome-nvidia \
+    --gpus all
     -e USER="yourusername" \
     -e TEAM="yourteam" \
     -e PASSKEY="yourpasskey" \
-    -e GPU="yourusername" \
+    -e GPU="true" \
     -e CPUS="0" \
-    infrabuilder/foldingathome
-```
-
-Start folding with only 1 CPU core (CPUS=1) :
-
-```
-docker run -d --name foldingathome \
-    -e USER="yourusername" \
-    -e TEAM="yourteam" \
-    -e PASSKEY="yourpasskey" \
-    -e GPU="yourusername" \
-    -e CPUS="1" \
-    infrabuilder/foldingathome
+    s0lesurviv0r/foldingathome-nvidia
 ```
 
 ## What if I have no team ?
