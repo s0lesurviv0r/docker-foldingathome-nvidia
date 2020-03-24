@@ -1,6 +1,8 @@
 FROM nvidia/driver:410.104-ubuntu16.04
 ADD	https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.5/fahclient_7.5.1_amd64.deb /root/
-RUN	mkdir -p /usr/share/doc/fahclient/ \
+RUN	apt-get update \
+	&& apt-get install -y ocl-icd-opencl-dev \
+	&& mkdir -p /usr/share/doc/fahclient/ \
 	&& mkdir /data \
 	&& touch /usr/share/doc/fahclient/sample-config.xml \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install /root/fahclient_7.5.1_amd64.deb -y
