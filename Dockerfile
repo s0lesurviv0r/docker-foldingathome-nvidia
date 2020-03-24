@@ -1,4 +1,4 @@
-FROM nvidia/driver:418.87.01-ubuntu18.04
+FROM nvidia/driver:410.104-ubuntu16.04
 ADD	https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.5/fahclient_7.5.1_amd64.deb /root/
 RUN	mkdir -p /usr/share/doc/fahclient/ \
 	&& mkdir /data \

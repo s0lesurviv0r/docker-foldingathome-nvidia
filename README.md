@@ -13,6 +13,8 @@ Docker : [![https://hub.docker.com/r/s0lesurviv0r/foldingathome-nvidia](https://
 
 ## How to run this image
 
+Install Nvidia container runtime first: https://docs.docker.com/config/containers/resource_constraints/#gpu
+
 Start folding with GPU and every CPU core (CPUS=0):
 
 ```
