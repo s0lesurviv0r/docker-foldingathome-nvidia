@@ -12,4 +12,4 @@ ENV	USER=Anonymous \
 	CPUS="0" \
 	FAHDIR=/data
 
-CMD ["sh","-c","/usr/bin/FAHClient --user=${USER} --team=${TEAM} --passkey=${PASSKEY} --gpu=${GPU} --smp=true --cpus=${CPUS} --chdir=$FAHDIR"]
+ENTRYPOINT ["/usr/bin/FAHClient", "--user=${USER} --team=${TEAM} --passkey=${PASSKEY} --gpu=${GPU} --smp=true --cpus=${CPUS} --chdir=$FAHDIR"]
