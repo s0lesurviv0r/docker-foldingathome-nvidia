@@ -17,12 +17,10 @@ Start folding with GPU and every CPU core (CPUS=0):
 
 ```
 docker run -d --name foldingathome-nvidia \
-    --gpus all
+    --gpus all \
     -e USER="yourusername" \
     -e TEAM="yourteam" \
     -e PASSKEY="yourpasskey" \
-    -e GPU="true" \
-    -e CPUS="0" \
     s0lesurviv0r/foldingathome-nvidia
 ```
 
