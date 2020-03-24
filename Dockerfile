@@ -8,7 +8,7 @@ WORKDIR /data
 ENV	USER=Anonymous \
 	TEAM=0 \
 	PASSKEY="" \
-	GPU="false" \
+	GPU="true" \
 	CPUS="0" \
 	FAHDIR=/data
 

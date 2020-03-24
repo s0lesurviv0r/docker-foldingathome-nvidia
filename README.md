@@ -4,7 +4,7 @@ Docker image for Folding@home on linux
 
 Github : [![https://github.com/s0lesurviv0r/docker-foldingathome-nvidia](https://img.shields.io/badge/Github-s0lesurviv0r%2Fdocker--foldingathome--nvidia-lightgrey)](https://github.com/s0lesurviv0r/docker-foldingathome-nvidia)
 
-Docker : [![https://hub.docker.com/r/s0lesurviv0r/foldingathome-nvidia](https://img.shields.io/badge/Docker-solesurviv0r%2Ffoldingathome--nvidia-blue)](https://hub.docker.com/r/s0lesurviv0r/foldingathome-nvidia)
+Docker : [![https://hub.docker.com/r/s0lesurviv0r/foldingathome-nvidia](https://img.shields.io/badge/Docker-s0lesurviv0r%2Ffoldingathome--nvidia-blue)](https://hub.docker.com/r/s0lesurviv0r/foldingathome-nvidia)
 
 
 ## Availables tags
@@ -13,7 +13,7 @@ Docker : [![https://hub.docker.com/r/s0lesurviv0r/foldingathome-nvidia](https://
 
 ## How to run this image
 
-Start folding with GPU (GPU=true) and every CPU core (CPUS=0) :
+Start folding with GPU and every CPU core (CPUS=0):
 
 ```
 docker run -d --name foldingathome-nvidia \
@@ -22,6 +22,18 @@ docker run -d --name foldingathome-nvidia \
     -e TEAM="yourteam" \
     -e PASSKEY="yourpasskey" \
     -e GPU="true" \
+    -e CPUS="0" \
+    s0lesurviv0r/foldingathome-nvidia
+```
+
+Start folding with no GPU and 1 CPU core (CPUS=1) :
+
+```
+docker run -d --name foldingathome-nvidia \
+    -e USER="yourusername" \
+    -e TEAM="yourteam" \
+    -e PASSKEY="yourpasskey" \
+    -e GPU="false" \
     -e CPUS="0" \
     s0lesurviv0r/foldingathome-nvidia
 ```
